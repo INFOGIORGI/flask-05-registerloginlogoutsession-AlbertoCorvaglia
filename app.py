@@ -1,9 +1,22 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_mysqldb import MySQL
+
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+def home():
+    return render_template("home.html",title="HomePage")
 
-app.run()
+@app.route("/register")
+def register():
+    return render_template("register.html",title="Register")
+
+@app.route("/login")
+def login():
+    return render_template("login.html",title="Log In")
+
+@app.route("/logout")
+def logout():
+    return render_template("logout.html",title="Log Out")
+
+app.run(debug=True)
