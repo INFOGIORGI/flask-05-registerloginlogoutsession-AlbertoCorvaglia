@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% block nav %}
-    <button><a href="{{url_for('login')}}">Login</a></button>
-    <button><a href="{{url_for('register')}}">Register</a></button>
+    <a href="{{url_for('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a>
+    <a href="{{url_for('register')}}"><i class="fas fa-user-plus"></i> Register</a>
 {% endblock nav %}
+
+{%block content%}
+<h1>Home Page</h1>
+{%endblock%}

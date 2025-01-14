@@ -1,5 +1,26 @@
-{%extends 'base.html'%}
-{%block nav%}
-    <button><a href="{{url_for('home')}}">Home</a></button>
-    <button><a href="{{url_for('login')}}">Login</a></button>
-{%endblock%}
+{% extends 'base.html' %}
+{% block nav %}
+    <a href="{{url_for('home')}}"><i class="fas fa-home"></i> Home</a>
+    <a href="{{url_for('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a>
+{% endblock nav %}
+{% block content %}
+    <h1 style="color: red;">{{message}}</h1>
+    <form action="/register/" method="POST">
+        <label for="nome">Nome</label><br>
+        <input type="text" name="nome"/><br>
+
+        <label for="cognome">Cognome</label><br>
+        <input type="text" name="cognome"/><br>
+
+        <label for="username">Username</label><br>
+        <input type="text" name="username"/><br>
+
+        <label for="password">Password</label><br>
+        <input type="password" name="password"/><br>
+
+        <label for="confirmPassword">Conferma Password</label><br>
+        <input type="password" name="confirmPassword"/><br><br>
+
+        <input type="submit" value="Invia"/>
+    </form>
+{% endblock content %}
